@@ -31,6 +31,9 @@
       text-align: center;
       color: white;
     }
+    .navbar a:hover {
+  color: white;
+}
 
     .hero::after {
       content: "";
@@ -116,10 +119,47 @@
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
+    .navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+    display: flex;
+    justify-content: flex-start; /* Alinea el contenido a la izquierda */
+  padding: 10px 20px; /* Espacio alrededor del contenido */
+    z-index: 10;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Los enlaces de la barra de navegación */
+.navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    font-size: 18px; /* Ajusta el tamaño según necesites */
+}
+
   </style>
 </head>
 <body>
+ <!-- Barra de navegación y Hero Section en el mismo header -->
+ <header>
+    
+  <nav class="navbar d-flex align-items-center px-3">
+    <!-- Botón a la izquierda que redirige al inicio -->
+    <a href="../index.html" class="navbar-brand d-flex align-items-center">
+    
+      <span class="fw-bold text-coffee">INICIO</span>
+    </a>
+  </nav>
 
+
+
+</header>
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content" data-aos="fade-up">
