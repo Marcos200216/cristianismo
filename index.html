@@ -23,7 +23,6 @@
     <nav class="navbar">
       <a href="#">Inicio</a>
       <a href="#versiculo">Versículos</a>
-      <a href="#testimonios">Testimonios</a>
       <a href="#cajas">Cuadros de Fe</a>
       <a href="#contacto">Contacto</a>
 
@@ -44,21 +43,23 @@
     </div>
   </header>
 
-  <!-- Versículo del día -->
-  <section id="versiculo" class="content">
-    <h2>Versículo del día</h2>
-    <div class="versiculo-box" data-aos="fade-up" data-aos-duration="2000">
-      <p>"El Señor es mi pastor; nada me faltará." - Salmo 23:1</p>
-    </div>
-  </section>
+ <!-- Versículo del día -->
+<section id="versiculo" class="content">
+  <h2>Versículo del día</h2>
+  <div class="versiculo-box" data-aos="fade-up" data-aos-duration="2000">
+    <p id="versiculo-dia">Cargando versículo...</p>
+  </div>
+</section>
+
 
 <!-- Reflexión -->
 <section id="reflexion" class="content">
   <h2>Reflexión del Día</h2>
   <div class="testimonial" data-aos="fade-up" data-aos-duration="2000">
-    <p>"Cuando abres tu corazón a Dios, encuentras la paz que el mundo no puede ofrecer."</p>
+    <p>"En cada momento de oscuridad, recuerda que Dios es la luz que nunca se apaga. Cuando entregas tu vida en Sus manos, Él transforma tus pruebas en bendiciones y tu alma encuentra una paz que el mundo jamás podrá comprender."</p>
   </div>
 </section>
+
 
 
 <section id="cajas" class="content">
@@ -79,7 +80,7 @@
     <a href="templates/oracion.html">
       <div class="grid-item" data-aos="zoom-in" data-aos-duration="1500">
         <img src="templates/3.jpg" alt="Oración Fuerte">
-        <div class="overlay">La importancia de la oración</div>
+        <div class="overlay">El valor de la oración</div>
       </div>
     </a>
     <a href="templates/amor-paz.html">
@@ -109,7 +110,7 @@
   <div class="footer-container">
     <div class="footer-section about">
       <h3>Inspiración Cristiana</h3>
-      <p>Somos un espacio dedicado a compartir el amor de Dios y la paz a través de mensajes, versículos y recursos cristianos.</p>
+<p>Creada con el propósito de compartir el evangelio de Jesucristo y su mensaje de salvación, brindando apoyo a las personas a través de la palabra bíblica y consejos inspiradores.</p>
     </div>
 
     <div class="footer-section contact">
@@ -120,47 +121,40 @@
       </ul>
     </div>
 
-    <div class="footer-section social">
-      <h3>Síguenos</h3>
-      <ul>
-        <li><a href="https://facebook.com/inspiracioncristiana" target="_blank">Facebook</a></li>
-        <li><a href="https://instagram.com/inspiracioncristiana" target="_blank">Instagram</a></li>
-        <li><a href="https://twitter.com/inspiracioncristiana" target="_blank">Twitter</a></li>
-      </ul>
-    </div>
+  
 
 <div class="footer-section contact">
-  <h3>Estemos en Contacto</h3>
-  <p>Si tienes alguna pregunta o deseas ponerte en contacto con nosotros, por favor completa el siguiente formulario:</p>
-  <button class="open-form-btn" onclick="openForm()">Contacto</button>
+  <h3>Estamos para escucharte</h3>
+<p>Si tienes alguna pregunta o requieres más información, por favor completa el siguiente formulario para ponerte en contacto.</p>
+  <button class="open-form-btn" onclick="openForm()">Enviar un correo</button>
 </div>
 
+<!-- Modal centrado -->
 <div class="modal" id="contactModal">
   <div class="modal-content">
     <span class="close" onclick="closeForm()">&times;</span>
     <h3>Formulario de Contacto</h3>
-    <form action="https://formspree.io/f/mblokqbp" method="POST">
-     <div class="form-group">
-    <label for="nombre">Nombre</label>
-    <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
-  </div>
-  <div class="form-group">
-    <label for="correo">Correo Electrónico</label>
-    <input type="email" id="correo" name="email" required placeholder="Tu correo electrónico">
-  </div>
-  <div class="form-group">
-    <label for="mensaje">Mensaje</label>
-    <textarea id="mensaje" name="message" rows="4" required placeholder="Escribe tu mensaje"></textarea>
-  </div>
-  <button type="submit" class="submit-button">Enviar Mensaje</button>
+    <form id="contact-form">
+      <div class="form-group">
+        <input type="text" name="nombre" required placeholder="Tu nombre">
+      </div>
+      <div class="form-group">
+        <input type="email" name="correo" required placeholder="Tu correo">
+      </div>
+      <div class="form-group">
+        <textarea name="mensaje" required rows="4" placeholder="Tu mensaje"></textarea>
+      </div>
+      <button type="submit" class="submit-button">Enviar Mensaje</button>
     </form>
   </div>
 </div>
 
 
-  <div class="footer-bottom">
-    <p>&copy; 2025 Inspiración Cristiana. Todos los derechos reservados.</p>
-  </div>
+
+ <div class="footer-bottom">
+  <p>&copy; 2025 Inspiración Cristiana | Desarrollado por <strong>Marcos</strong></p>
+</div>
+
 </footer>
 
 
@@ -169,6 +163,10 @@
   <!-- AOS script -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
+
+
+
+
     // Inicializa AOS
     AOS.init();
 
@@ -178,13 +176,12 @@
     const closeBtn = document.getElementById('close-btn');
     const navLinks = document.querySelectorAll('.navbar a');
 
-      function openForm() {
-    document.getElementById("contactModal").style.display = "block";
-  }
-
-  function closeForm() {
-    document.getElementById("contactModal").style.display = "none";
-  }
+   function openForm() {
+  document.getElementById("contactModal").style.display = "flex";
+}
+function closeForm() {
+  document.getElementById("contactModal").style.display = "none";
+}
 
     menuIcon.addEventListener('click', () => {
       navbar.classList.toggle('active');
@@ -206,5 +203,138 @@
     navMenu.classList.remove('active');
   });
   </script>
+  
+ <!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+  const form = document.getElementById('contact-form');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); // Previene el redireccionamiento
+
+    const formData = new FormData(form);
+
+    fetch('https://formspree.io/f/mblokqbp', { // ← Cambia XXXXX por tu ID de Formspree
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json'
+      },
+      body: formData
+    })
+    .then(response => {
+      if (response.ok) {
+        Swal.fire({
+          icon: 'success',
+          title: '¡Mensaje enviado!',
+          text: 'Gracias por contactarnos.',
+          confirmButtonColor: '#2c3e50'
+        }).then(() => {
+          document.getElementById('contactModal').style.display = 'none'; // Cierra el modal
+        });
+        form.reset();
+      } else {
+        return response.json().then(data => {
+          throw new Error(data.error || 'Error al enviar el formulario');
+        });
+      }
+    })
+    .catch(error => {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: error.message,
+        confirmButtonColor: '#e74c3c'
+      });
+    });
+  });
+</script>
+<script> 
+const versiculos = [
+    // Versículos ejemplo (puedes añadir hasta 365, uno por día)
+    "Jehová es mi pastor; nada me faltará. - Salmo 23:1",
+  "Todo lo puedo en Cristo que me fortalece. - Filipenses 4:13",
+  "Porque de tal manera amó Dios al mundo, que ha dado a su Hijo unigénito, para que todo aquel que en él cree no se pierda, mas tenga vida eterna. - Juan 3:16",
+  "En el principio creó Dios los cielos y la tierra. - Génesis 1:1",
+  "Clama a mí, y yo te responderé. - Jeremías 33:3",
+  "El Señor es mi luz y mi salvación; ¿de quién temeré? Jehová es la fortaleza de mi vida; ¿de quién he de atemorizarme? - Salmo 27:1",
+  "La paz os dejo, mi paz os doy; no os la doy como el mundo la da. No se turbe vuestro corazón, ni tenga miedo. - Juan 14:27",
+  "Y sabemos que a los que aman a Dios, todas las cosas les ayudan a bien, esto es, a los que conforme a su propósito son llamados. - Romanos 8:28",
+  "Porque yo sé los pensamientos que tengo acerca de vosotros, dice Jehová, pensamientos de paz, y no de mal, para daros el fin que esperáis. - Jeremías 29:11",
+  "El Señor peleará por vosotros, y vosotros estaréis tranquilos. - Éxodo 14:14",
+  "El que habita al abrigo del Altísimo morará bajo la sombra del Omnipotente. - Salmo 91:1",
+  "Y todo lo que pidáis en oración, creyendo, lo recibiréis. - Mateo 21:22",
+  "No te dejaré, ni te desampararé. - Josué 1:5",
+  "Y conoceréis la verdad, y la verdad os hará libres. - Juan 8:32",
+  "El que sigue la justicia y la misericordia hallará la vida, la justicia y la honra. - Proverbios 21:21",
+  "Jehová te guardará de todo mal; él guardará tu alma. - Salmo 121:7",
+  "Bendito el hombre que confía en Jehová, y cuya confianza es Jehová. - Jeremías 17:7",
+  "Porque el que no ama, no ha conocido a Dios; porque Dios es amor. - 1 Juan 4:8",
+  "Bienaventurados los que tienen hambre y sed de justicia, porque ellos serán saciados. - Mateo 5:6",
+  "La bondad y la misericordia me seguirán todos los días de mi vida, y en la casa de Jehová moraré por largos días. - Salmo 23:6",
+  "Jehová es mi roca, mi fortaleza y mi libertador; mi Dios, mi peña, en él confiaré. - Salmo 18:2",
+  "El Señor es cerca de todos los que le invocan, de todos los que le invocan de veras. - Salmo 145:18",
+  "El Señor es fiel en todas sus palabras, y santo en todas sus obras. - Salmo 145:13",
+  "Y dijo Jesús: Si puedes creer, al que cree todo le es posible. - Marcos 9:23",
+  "Venid a mí todos los que estáis trabajados y cargados, y yo os haré descansar. - Mateo 11:28",
+  "Por tanto, os digo: No os afanéis por vuestra vida, qué comeréis, o qué beberéis; ni por vuestro cuerpo, qué vestiréis. - Mateo 6:25",
+  "Jehová es bueno, es refugio en el día de la angustia, y conoce a los que en él confían. - Nahúm 1:7",
+  "Los justos florecerán como la palma; crecerán como cedros en el Líbano. - Salmo 92:12",
+  "El que habita en el lugar secreto del Altísimo morará bajo la sombra del Omnipotente. - Salmo 91:1",
+  "Jesús les dijo: Yo soy el pan de vida; el que a mí viene, nunca tendrá hambre; y el que en mí cree, no tendrá sed jamás. - Juan 6:35",
+  "Bienaventurados los que lloran, porque ellos recibirán consolación. - Mateo 5:4",
+  "Todo lo que hagáis, hacedlo de corazón, como para el Señor y no para los hombres. - Colosenses 3:23",
+  "Por lo cual os digo: No os afanéis por vuestra vida, qué comeréis, o qué beberéis; ni por vuestro cuerpo, qué vestiréis. - Mateo 6:25",
+  "Dios es nuestro amparo y fortaleza, nuestro pronto auxilio en las tribulaciones. - Salmo 46:1",
+  "Los ojos de Jehová están sobre los justos, y sus oídos atentos a su clamor. - Salmo 34:15",
+  "Porque yo sé los pensamientos que tengo acerca de vosotros, dice Jehová, pensamientos de paz, y no de mal, para daros el fin que esperáis. - Jeremías 29:11",
+  "El que cree en el Hijo tiene vida eterna; pero el que rehúsa creer en el Hijo no verá la vida, sino que la ira de Dios está sobre él. - Juan 3:36",
+  "Bienaventurados los pacificadores, porque ellos serán llamados hijos de Dios. - Mateo 5:9",
+  "El que tiene oídos para oír, oiga. - Mateo 13:9",
+  "En el principio era el Verbo, y el Verbo era con Dios, y el Verbo era Dios. - Juan 1:1",
+  "Jehová está cerca de los quebrantados de corazón; y salva a los contritos de espíritu. - Salmo 34:18",
+  "Los que esperan a Jehová tendrán nuevas fuerzas; levantarán alas como las águilas; correrán, y no se cansarán; caminarán, y no se fatigarán. - Isaías 40:31",
+  "Dios es amor, y el que permanece en amor, permanece en Dios, y Dios en él. - 1 Juan 4:16",
+  "Jehová es mi pastor; nada me faltará. - Salmo 23:1",
+  "El amor sea sin fingimiento. Aborreced lo malo, seguid lo bueno. - Romanos 12:9",
+  "El que no ama, no ha conocido a Dios; porque Dios es amor. - 1 Juan 4:8",
+  "Bendito el hombre que confía en Jehová, y cuya confianza es Jehová. - Jeremías 17:7",
+  "Todo lo que tiene vida, alabe a Jehová. - Salmo 150:6",
+  "Porque Jehová es bueno; para siempre es su misericordia, y su fidelidad por todas las generaciones. - Salmo 100:5",
+  "El Señor es mi luz y mi salvación; ¿de quién temeré? Jehová es la fortaleza de mi vida; ¿de quién he de atemorizarme? - Salmo 27:1",
+  "Mi paz os dejo, mi paz os doy; no os la doy como el mundo la da. No se turbe vuestro corazón, ni tenga miedo. - Juan 14:27",
+  "El que habita al abrigo del Altísimo morará bajo la sombra del Omnipotente. - Salmo 91:1",
+  "En todo esto somos más que vencedores por medio de aquel que nos amó. - Romanos 8:37",
+  "Jehová es mi fortaleza y mi cántico, y ha sido mi salvación. - Éxodo 15:2",
+  "Dios es espíritu; y los que le adoran, en espíritu y en verdad es necesario que adoren. - Juan 4:24",
+  "Todo lo que pidáis en oración, creyendo, lo recibiréis. - Mateo 21:22",
+  "Jehová es bueno, es refugio en el día de la angustia, y conoce a los que en él confían. - Nahúm 1:7",
+  "El amor de Dios ha sido derramado en nuestros corazones por el Espíritu Santo que nos fue dado. - Romanos 5:5",
+  "En el día que yo temiere, yo en ti confiaré. - Salmo 56:3",
+  "Bendito el hombre que confía en Jehová, y cuya confianza es Jehová. - Jeremías 17:7",
+  "El Señor peleará por vosotros, y vosotros estaréis tranquilos. - Éxodo 14:14",
+  "Jesús les dijo: Yo soy el pan de vida; el que a mí viene, nunca tendrá hambre; y el que en mí cree, no tendrá sed jamás. - Juan 6:35",
+  "El que habita al abrigo del Altísimo morará bajo la sombra del Omnipotente. - Salmo 91:1",
+  "En el principio creó Dios los cielos y la tierra. - Génesis 1:1",
+"Jehová es mi luz y mi salvación; ¿de quién temeré? Jehová es la fortaleza de mi vida; ¿de quién he de atemorizarme? - Salmo 27:1",
+"El Señor es mi roca, mi fortaleza y mi libertador; mi Dios, mi peña, en él confiaré. - Salmo 18:2",
+"Bienaventurados los que lloran, porque ellos recibirán consolación. - Mateo 5:4",
+"Porque el que no ama, no ha conocido a Dios; porque Dios es amor. - 1 Juan 4:8",
+"Todo lo puedo en Cristo que me fortalece. - Filipenses 4:13",
+"Todo lo que tiene vida, alabe a Jehová. - Salmo 150:6",
+"Por lo cual os digo: No os afanéis por vuestra vida, qué comeréis, o qué beberéis; ni por vuestro cuerpo, qué vestiréis. - Mateo 6:25"
+  ];
+
+  const hoy = new Date();
+  const diaDelAño = Math.floor(
+    (hoy - new Date(hoy.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24
+  );
+
+  const versiculoHoy = versiculos[diaDelAño % versiculos.length];
+  document.getElementById("versiculo-dia").textContent = versiculoHoy;
+
+</script>
+
+
 </body>
 </html>
